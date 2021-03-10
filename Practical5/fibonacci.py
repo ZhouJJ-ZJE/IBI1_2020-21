@@ -3,13 +3,13 @@
 a=1
 b=1
 c=2
-d="th"
+print ("1st 1\n2nd 2")  #print the first and second number
 for i in range(0,15):
-  a=a+b
+  a=a+b #generate the next number
   c=c+1
-  print (str(c)+d+str(a))
+  print (str(c)+"th "+str(a)) #print number
   b=a+b
   c=c+1
-  print (str(c)+d+str(b))
-    if i==13:
+  print (str(c)+"th "+str(b)) #again
+  if i==13:
       break
