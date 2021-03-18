@@ -3,7 +3,7 @@
 a=1
 b=1
 c=2
-print ("1st 1\n2nd 2")  #print the first and second number
+print ("1st 1\n2nd 1")  #print the first and second number
 for i in range(0,15):
   a=a+b #now a becomes the next nunmber
   c=c+1
