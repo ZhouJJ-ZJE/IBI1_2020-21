@@ -1,7 +1,7 @@
 import re, os
 from DNA_to_protein import translate#use the function from another program
 
-f = open(input())
+f = open()
 lines = f.readlines() 
 
 result = []
