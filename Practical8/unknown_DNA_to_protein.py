@@ -11,7 +11,7 @@ for i in range(0, len(lines)):
             result.append(re.findall(r'(>.+?)(?:_| )', lines[i])[0])
             bases = ''
             for n in range(0, len(lines[i:-1])):
-                if not lines[i+n+1].startswith(">"):  # Skip the description line
+                if not lines[i+n+1].startswith(">"):  #go to the next line
                     bases += lines[i+n+1][:-1]
                     pro = translate(bases)#translate, get the protein sequence
                 else:
