@@ -1,15 +1,23 @@
 import re
 dict()
 protein = {
-    'TTT': 'F', 'TTC': 'F', 'TTA': 'L', 'TTG': 'L', 'TCT': 'S', 'TCC': 'S', 'TCG': 'S',
-    'TAT': 'Y', 'TAC': 'Y', 'TAA': 'O', 'TAG': 'U', 'TGT': 'C', 'TGC': 'C', 'TGA': 'X', 'TGG': 'W',
-    'CTT': 'L', 'CTC': 'L', 'CTA': 'L', 'CTG': 'L', 'CCT': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P',
-    'CAT': 'H', 'CAC': 'H', 'CAA': 'Q', 'CAG': 'Z', 'CGT': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R',
-    'ATT': 'I', 'ATC': 'I', 'ATA': 'J', 'ATG': 'M', 'ACT': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T',
-    'AAT': 'N', 'AAC': 'B', 'AAA': 'K', 'AAG': 'K', 'AGT': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R',
-    'GTT': 'V', 'GTC': 'V', 'GTA': 'V', 'GTG': 'V', 'GCT': 'A', 'GCC': 'A', 'GCA': 'A', 'GCG': 'A',
-    'GAT': 'D', 'GAC': 'D', 'GAA': 'E', 'GAG': 'E', 'GGT': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G'
-}
+    'TTT':'F', 'TCT':'S', 'TAT':'Y', 'TGT':'C',
+    'TTC':'F', 'TCC':'S', 'TAC':'Y', 'TGC':'C',
+    'TTA':'L', 'TCA':'S', 'TAA':'O', 'TGA':'X',
+    'TTG':'L', 'TCG':'S', 'TAG':'U', 'TGG':'W',
+    'CTT':'L', 'CCT':'P', 'CAT':'H', 'CGT':'R',
+    'CTC':'L', 'CCC':'P', 'CAC':'H', 'CGC':'R',
+    'CTA':'L', 'CCA':'P', 'CAA':'Q', 'CGA':'R',
+    'CTG':'L', 'CCG':'P', 'CAG':'Z', 'CGG':'R',
+    'ATT':'I', 'ACT':'T', 'AAT':'N', 'AGT':'S',
+    'ATC':'I', 'ACC':'T', 'AAC':'B', 'AGC':'S',
+    'ATA':'J', 'ACA':'T', 'AAA':'K', 'AGA':'R',
+    'ATG':'M', 'ACG':'T', 'AAG':'K', 'AGG':'R',
+    'GTT':'V', 'GCT':'A', 'GAT':'D', 'GGT':'G',
+    'GTC':'V', 'GCC':'A', 'GAC':'D', 'GGC':'G',
+    'GTA':'V', 'GCA':'A', 'GAA':'E', 'GGA':'G',
+    'GTG':'V', 'GCG':'A', 'GAG':'E', 'GGG':'G',
+    }
 seq = 'ATGCGACTACGATCGAGGGCC'
 pro = 'the encoded protein is '
 for i in range(0, len(seq), 3):
