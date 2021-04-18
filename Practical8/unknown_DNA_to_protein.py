@@ -25,7 +25,7 @@ def translate(sequence):
         pro = pro + protein[sequence[i:i + 3]]
     return pro
 
-f = open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa')
+f = open(input())
 lines = f.readlines()
 
 result = []
