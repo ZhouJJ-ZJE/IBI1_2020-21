@@ -1,0 +1,6 @@
+The alignment score between human and mouse is 1091 and the percentage of identical amino acids is 89.63963963963964
+The alignment score between human and random is -250 and the percentage of identical amino acids is 5.405405405405405
+The alignment score between mouse and random is -250 and the percentage of identical amino acids is 5.8558558558558556
+ 
+89.6%gene of humans and mice are alomost the same, which might can prove that humans and mice have the same ancestor. 
+Also, this can prove the feasibility of experiments with mice, because many of the mechanisms of the human body and mice might be similar.
