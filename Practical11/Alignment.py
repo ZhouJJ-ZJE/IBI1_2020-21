@@ -1,6 +1,6 @@
 import re
 import os
-#use function to help find sequence
+#use function to help read sequence
 def readseq(seq):
     ls = []
     f = open(seq)
@@ -9,8 +9,7 @@ def readseq(seq):
             ls.append(line.replace('\n', ''))
             break
     return ls
-
-
+#read three sequences
 seq1 = "".join(readseq('SOD2_human.fa'))
 seq2 = "".join(readseq('SOD2_mouse.fa'))
 seq3 = "".join(readseq('RandomSeq.fa'))
@@ -43,7 +42,6 @@ blosum = [
 [-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4,  1],
 ]
 
-
 #design a function, the input are two sequences and the output is the alignment score
 def dis(seq1, seq2):
     edit_distance = 0 #set original data as 0
@@ -53,7 +51,6 @@ def dis(seq1, seq2):
             e = amino.index(seq2[i])
             edit_distance = edit_distance + blosum[d][e]
     return edit_distance #calculate the score
-
 
 def per(seq1, seq2):
     n = 0
