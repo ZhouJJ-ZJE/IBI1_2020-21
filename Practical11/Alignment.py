@@ -44,7 +44,7 @@ blosum = [
 ]
 
 
-
+#design a function, the input are two sequences and the output is the alignment score
 def dis(seq1, seq2):
     edit_distance = 0 #set original data as 0
     for i in range(len(seq1)):
@@ -52,21 +52,18 @@ def dis(seq1, seq2):
             d = amino.index(seq1[i])
             e = amino.index(seq2[i])
             edit_distance = edit_distance + blosum[d][e]
-    return edit_distance
+    return edit_distance #calculate the score
 
 
 def per(seq1, seq2):
-    j = 0
+    n = 0
     for i in range(len(seq1)):
         if seq1[i] == seq2[i]:
-            j = j + 1
-    per = j / len(seq1) * 100
+            n = n + 1
+    per = n / len(seq1) * 100
     return per #calculate the percentage of identical amino acids
 
 
-print('The alignment score between human and mouse is', dis(seq1, seq2),
-      'and the percentage of identical amino acids is', per(seq1, seq2))
-print('The alignment score between human and random is', dis(seq1, seq3),
-      'and the percentage of identical amino acids is', per(seq1, seq3))
-print('The alignment score between mouse and random is', dis(seq2, seq3),
-      'and the percentage of identical amino acids is', per(seq2, seq3))
+print('The alignment score of DNA sequences between human and mouse is', dis(seq1, seq2),'and the percentage of identical amino acids is', per(seq1, seq2))
+print('The alignment score of DNA sequences between human and mouse is', dis(seq1, seq3),'and the percentage of identical amino acids is', per(seq1, seq3))
+print('The alignment score of DNA sequences between mouse and random is', dis(seq2, seq3),'and the percentage of identical amino acids is', per(seq2, seq3))
