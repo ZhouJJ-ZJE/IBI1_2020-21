@@ -65,5 +65,5 @@ def per(seq1, seq2):
 
 
 print('The alignment score of DNA sequences between human and mouse is', dis(seq1, seq2),'and the percentage of identical amino acids is', per(seq1, seq2))
-print('The alignment score of DNA sequences between human and mouse is', dis(seq1, seq3),'and the percentage of identical amino acids is', per(seq1, seq3))
+print('The alignment score of DNA sequences between human and random', dis(seq1, seq3),'and the percentage of identical amino acids is', per(seq1, seq3))
 print('The alignment score of DNA sequences between mouse and random is', dis(seq2, seq3),'and the percentage of identical amino acids is', per(seq2, seq3))
