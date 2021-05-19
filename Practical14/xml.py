@@ -3,13 +3,10 @@ import xml.dom.minidom
 import matplotlib.pyplot as plt
 import numpy as np
 
-#use function to parse xml file
-def parse_xml(file_name):
-    DOMTree = xml.dom.minidom.parse(file_name)
-    collection = DOMTree.documentElement
-    terms = collection.getElementsByTagName("term")
-    return terms
-terms=parse_xml("go_obo.xml")
+# parse xml file
+DOMTree = xml.dom.minidom.parse("go_obo.xml")
+collection = DOMTree.documentElement
+terms = collection.getElementsByTagName("term")
 
 dic={}
 for term in terms:    
@@ -21,23 +18,23 @@ for term in terms:
     for is_a in IS_A:
         dic[is_a.firstChild.data].append(ID[0].firstChild.data)
 
+        
+#design a function to count the number of child node
+def countlen(m):
+    for i in range(len(m)): 
+        if m[i] not in listm: #listm shoud be empty at the beginning, and avoid add the same element twice
+            listm.append(m[i])
+            countlen(dic[m[i]])   
+    return len(listm) 
 
 def count(n):
     for term in terms:
-        defstr=term.getElementsByTagName('defstr')             
+        defstr=term.getElementsByTagName('defstr')   #find defstr, in which line exist the molecule we want          
         if n in defstr[0].firstChild.data:
             ID=term.getElementsByTagName('id')
             l=dic[ID[0].firstChild.data] 
             c=countlen(l)
     return c
-
-#design a function to count the number of child node
-def countlen(m):
-    for i in range(len(m)): 
-        if m[i] not in listm: #listm shoud be empty at the beginning
-            listm.append(m[i])
-            countlen(dic[m[i]])   
-    return len(listm) 
 
 
 #run the function     
@@ -62,10 +59,9 @@ molecules = {"DNA": DNA, "RNA": RNA,
 labels = molecules.keys()
 sizes = molecules.values()
 explode =(0, 0, 0, 0)
-fig1, ax1 = plt.subplots()    # ax1.xx, xx meams the operation to the figure
+fig1, ax1 = plt.subplots()    
 ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
         shadow=False, startangle=90)
 ax1.axis('equal')
 ax1.set(title ='The number of childNodes')
-
 plt.show()
