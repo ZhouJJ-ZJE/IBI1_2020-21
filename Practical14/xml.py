@@ -24,7 +24,7 @@ def countlen(m):
     for i in range(len(m)): 
         if m[i] not in listm: #listm shoud be empty at the beginning, and avoid add the same element twice
             listm.append(m[i])
-            countlen(dic[m[i]])   
+            countlen(dic[m[i]])  #add every element in the list, thus, the len of the list is the number of child nodes
     return len(listm) 
 
 def count(n):
@@ -32,8 +32,8 @@ def count(n):
         defstr=term.getElementsByTagName('defstr')   #find defstr, in which line exist the molecule we want          
         if n in defstr[0].firstChild.data:
             ID=term.getElementsByTagName('id')
-            l=dic[ID[0].firstChild.data] 
-            c=countlen(l)
+            l=dic[ID[0].firstChild.data] #put data of the dic into a list because the function above is designed for list len count
+            c=countlen(l)#use the function above to count len
     return c
 
 
